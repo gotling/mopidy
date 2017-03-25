@@ -314,6 +314,7 @@ class _Handler(object):
         gst_logger.error('GStreamer error: %s', error_msg)
         # TODO: is this needed?
         self._audio.stop_playback()
+        self.on_end_of_stream()
 
     def on_warning(self, error, debug):
         error_msg = str(error).decode('utf-8')
